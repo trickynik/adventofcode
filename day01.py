@@ -10,4 +10,4 @@ with open('day01.txt') as f:
         else:
             e[i] +=  int(line.strip())
 e.sort(reverse=True)
-print("max ", e[0], ", top3 ", ( sum(e[0:3] ) ))
+print("max ", e[0], ",  ", ( sum(e[0:3] ) ))
