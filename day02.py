@@ -7,9 +7,7 @@ rps = { "A": "rock",   "X": "rock",
          "C": "sissor", "Z": "sissor"
          }
 def wining(cond, throw):
-    if cond == "Y": # tie
-        return throw
-    elif cond == "X" : # lose
+    if cond == "X" : # lose
         if (rps[throw] == "rock" ): 
             return "C"
         if (rps[throw] == "paper" ): 
@@ -24,8 +22,7 @@ def wining(cond, throw):
         if (rps[throw] == "sissor" ):
             return "A"
     else:
-        print("no winning??")
-        raise "error"
+        return throw #tie
     
     
 with open('day02.txt') as f:
