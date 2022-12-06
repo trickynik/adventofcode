@@ -10,17 +10,12 @@ def subset(x,y):
 def overlap(x,y):
     if (len(y)) > (len(x)):
         x,y = y,x # make sure x is always the longest range
-    # if (( y.start < x.start) or (y.stop > x.stop)):
-    #     return 0
-
-
+        
     for i in range( min(x.start,y.start) , max(x.stop,y.stop) +1):
         if i in range(x.start, x.stop + 1): 
             if i in range(y.start, y.stop +1 ):
-                #print(i,end=", ")
                 return True
-    # print("overlap = ", over)
-    #over =  min(x.stop, y.stop) - max(x.start,y.start)
+
 
 
 total = 0
@@ -30,7 +25,6 @@ with open("day04.txt") as f:
         x,y = line.split(",")
         section1 = range( int(x.split("-")[0]) , int(x.split("-")[1]))
         section2 = range( int(y.split("-")[0]) , int(y.split("-")[1]))
-        print(section1, section2)
         if overlap(section1,section2):
             total += 1
         # if(subset(section1,section2)):
