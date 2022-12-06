@@ -1,5 +1,3 @@
-
-
 def subset(x,y):
     if (len(y)) > (len(x)):
         x,y = y,x # make sure x is always the longest range
@@ -17,7 +15,6 @@ def overlap(x,y):
                 return True
 
 
-
 total = 0
 with open("day04.txt") as f:
     lines = f.readlines()
@@ -25,9 +22,9 @@ with open("day04.txt") as f:
         x,y = line.split(",")
         section1 = range( int(x.split("-")[0]) , int(x.split("-")[1]))
         section2 = range( int(y.split("-")[0]) , int(y.split("-")[1]))
-        if overlap(section1,section2):
+        if overlap(section1,section2):  #part 2
             total += 1
-        # if(subset(section1,section2)):
+        # if(subset(section1,section2)):  #part 1
         #     total += 1
         
     print(total)
